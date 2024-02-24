@@ -64,21 +64,23 @@ namespace JeuDeMath
 
             while (true)
             {
-                if (operateurs == EOperateurs.addition)
+                switch (operateurs)
                 {
-                    Console.Write($"{nombre1} + {nombre2} = "); 
-                }
-                else if (operateurs == EOperateurs.multiplication)
-                {
-                    Console.Write($"{nombre1} x {nombre2} = ");
-                }
-                else if (operateurs == EOperateurs.soustraction)
-                {
-                    Console.Write($"{nombre1} - {nombre2} = "); 
-                }
-                else
-                {
-                    System.Console.WriteLine("ERREUR : Opérateur inconnu");
+                    case EOperateurs.addition:
+                        Console.Write($"{nombre1} + {nombre2} = "); 
+                        break; 
+
+                    case EOperateurs.multiplication:
+                        Console.Write($"{nombre1} x {nombre2} = "); 
+                        break;
+
+                    case EOperateurs.soustraction:
+                        Console.Write($"{nombre1} - {nombre2} = "); 
+                        break;
+
+                    default:
+                        System.Console.WriteLine("ERREUR : Opérateur inconnu");
+                        return false; 
                 }
 
                 
